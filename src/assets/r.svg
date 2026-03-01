@@ -1,0 +1,26 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="300" fill="#000000"/>
+
+  <!-- Letter R -->
+  <path d="
+    M90 220 
+    L90 80 
+    L160 80 
+    Q210 80 210 130 
+    Q210 170 170 180 
+    L215 220 
+    L170 220 
+    L135 185 
+    L130 185 
+    L130 220 
+    Z
+
+    M130 110 
+    L130 160 
+    L160 160 
+    Q180 160 180 135 
+    Q180 110 160 110 
+    Z
+  " fill="#FFFFFF"/>
+</svg>
