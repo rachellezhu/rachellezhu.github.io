@@ -1,14 +1,29 @@
 {
-  "name": "rachellezhu.github.io",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.17.1"
-  }
+	"name": "rachellezhu.github.io",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"biome:format": "bunx --bun @biomejs/biome format --write",
+		"biome:lint": "bunx --bun @biomejs/biome lint --write",
+		"biome:check": "bunx --bun @biomejs/biome check --write"
+	},
+	"dependencies": {
+		"@astrojs/react": "^4.4.2",
+		"@tailwindcss/vite": "^4.2.1",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"astro": "^5.17.1",
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4",
+		"tailwindcss": "^4.2.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.4",
+		"@types/bun": "^1.3.9",
+		"daisyui": "^5.5.19"
+	}
 }
