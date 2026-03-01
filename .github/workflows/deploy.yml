@@ -1,38 +1,35 @@
-name: Deploy to Github Pages
+name: Deploy Astro to GitHub Pages
 
 on:
   push:
     branches: ["master"]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1.3.10
+      - uses: oven-sh/setup-bun@v1
 
-      - name: Install deps
-        run: bun run install
+      - run: bun install
 
-      - name: Build
-        run: bun run build
+      - run: bun run build
 
-      - name: Deploy
-        uses: actions/upload-pages-artifact@v2
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-    
-    deploy:
-      needs: build
-      runs-on: ubuntu-latest
-      permissions:
-        pages: write
-        id-token: write
-      
-      steps:
-        - name: Deploy to GitHub Pages
-          uses: action/deploy-pages@v2
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
